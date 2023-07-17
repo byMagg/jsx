@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// 1) Importar React y ReactDOM
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Random from "./components/Random"
+import Input from "./components/Input";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// 2) Obtenemos la referencia del elemento padre root
+const el = document.getElementById('root');
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// 3) Asignamos a react que coja el control del elemento
+const root = ReactDOM.createRoot(el);
+
+// 4) Creamos el componente
+function App() {
+    return <Random />
+}
+
+// 5) Mostramos el componente
+root.render(<App />)
